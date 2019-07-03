@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+group 'JPaintFX'
+version '1.0'
+
+javafx {
+    version = "11.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media' ]
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(includes: ['*.jar'], dir: 'libs')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+wrapper {
+    gradleVersion = '5.4.1'
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
+
+mainClassName = 'Main'
